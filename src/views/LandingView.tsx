@@ -69,7 +69,7 @@ export const LandingView: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 sm:mt-14">
           <div className="relative rounded-3xl overflow-hidden border border-slate-200/80 shadow-2xl aspect-[16/9] sm:aspect-[21/9]">
             <img
-              src="/src/assets/images/hero_couple_wedding_1792322189869.jpg"
+              src="/images/hero_couple_wedding_1792322189869.jpg"
               alt="Best Sathi Matrimonial"
               className="w-full h-full object-cover"
               loading="eager"

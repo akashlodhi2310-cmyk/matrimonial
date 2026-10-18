@@ -20,7 +20,7 @@ export const INITIAL_PROFILES: Profile[] = [
     bio: 'Passionate about technology, classical Hindustani music, and weekend hiking. I value a warm sense of humor, intellectual curiosity, and deep family bonds. Looking for an open-minded companion who appreciates both thoughtful conversations and impromptu coffee trails.',
     interests: ['Hindustani Classical', 'Trekking', 'Specialty Coffee', 'Architecture Books', 'Badminton'],
     photos: [
-      '/src/assets/images/profile_ananya_portrait_1792322191115.jpg'
+      '/images/profile_ananya_portrait_1792322191115.jpg'
     ],
     familyDetails: {
       fatherOccupation: 'Retired Chief Civil Engineer (State PWD)',
@@ -65,7 +65,7 @@ export const INITIAL_PROFILES: Profile[] = [
     bio: 'Dedicated pediatrician who finds joy in working with children and young families. In my leisure hours, I enjoy Kathak dance, pottery workshops, and culinary experiments. I believe a healthy relationship is built upon mutual respect, empathy, and shared life milestones.',
     interests: ['Kathak Dance', 'Ceramic Pottery', 'World Cuisine', 'Running', 'Art Galleries'],
     photos: [
-      '/src/assets/images/profile_priya_portrait_1792322192372.jpg'
+      '/images/profile_priya_portrait_1792322192372.jpg'
     ],
     familyDetails: {
       fatherOccupation: 'Senior Pharmaceutical Business Owner',
@@ -110,7 +110,7 @@ export const INITIAL_PROFILES: Profile[] = [
     bio: 'Design enthusiast fascinated by sustainable heritage architecture and modern spaces. Love slow Sunday mornings with filter coffee and a sketchpad. Seeking a thoughtful, grounded partner who celebrates life’s little moments and values meaningful growth together.',
     interests: ['Heritage Walk Tours', 'Sketching', 'Specialty Tea & Coffee', 'Yoga', 'Independent Cinema'],
     photos: [
-      '/src/assets/images/profile_meera_portrait_1792322191571.jpg'
+      '/images/profile_meera_portrait_1792322191571.jpg'
     ],
     familyDetails: {
       fatherOccupation: 'Deputy General Manager (Public Sector Bank)',
@@ -155,7 +155,7 @@ export const INITIAL_PROFILES: Profile[] = [
     bio: 'Finance professional with a deep love for Bengali literature, Rabindra Sangeet, and documentary cinema. Balancing sharp analytical thinking during the week with warm family gatherings on the weekend. Looking for an emotionally mature partner with progressive values.',
     interests: ['Economics Podcasts', 'Rabindra Sangeet', 'Literature', 'Tennis', 'Travel Photography'],
     photos: [
-      '/src/assets/images/profile_diya_portrait_1792322224546.jpg'
+      '/images/profile_diya_portrait_1792322224546.jpg'
     ],
     familyDetails: {
       fatherOccupation: 'Senior Advocate (Calcutta High Court)',
@@ -200,7 +200,7 @@ export const INITIAL_PROFILES: Profile[] = [
     bio: 'Academic researcher passionate about education policy, community development, and sustainable living. I enjoy book club discussions, organic farming weekends, and marathon training. Looking for a partner who is grounded, values continuous learning, and cherishes family togetherness.',
     interests: ['Book Clubs', 'Marathon Running', 'Gardening', 'Social History', 'Folk Music'],
     photos: [
-      '/src/assets/images/profile_tanvi_portrait_1792322224446.jpg'
+      '/images/profile_tanvi_portrait_1792322224446.jpg'
     ],
     familyDetails: {
       fatherOccupation: 'Executive Engineer (Irrigation Department)',
@@ -245,7 +245,7 @@ export const INITIAL_PROFILES: Profile[] = [
     bio: 'Product leader building customer-centric enterprise tools. Outside work, I love playing badminton, exploring south Indian filter coffee nooks, and planning heritage trips. Looking for an ambitious yet grounded partner who believes in mutual encouragement and shared dreams.',
     interests: ['Product Strategy', 'Badminton', 'Heritage Travel', 'Podcasting', 'Culinary Arts'],
     photos: [
-      '/src/assets/images/profile_kavya_portrait_1792322224590.jpg'
+      '/images/profile_kavya_portrait_1792322224590.jpg'
     ],
     familyDetails: {
       fatherOccupation: 'Managing Director (Renewable Energy Infra)',
@@ -290,7 +290,7 @@ export const INITIAL_PROFILES: Profile[] = [
     bio: 'Cloud architect who loves scalable distributed systems and minimalist product design. Weekends are reserved for cycling along quiet outskirts, reading biographies, and experimenting with Italian pasta. Looking for an educated, compassionate partner with a positive outlook toward family and personal growth.',
     interests: ['Road Cycling', 'Biographies', 'Specialty Coffee', 'Acoustic Guitar', 'Hiking'],
     photos: [
-      '/src/assets/images/profile_rohit_portrait_1792322224570.jpg'
+      '/images/profile_rohit_portrait_1792322224570.jpg'
     ],
     familyDetails: {
       fatherOccupation: 'Retired Director General (Govt. of India)',

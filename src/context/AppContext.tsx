@@ -120,7 +120,7 @@ const INITIAL_CUSTOMERS: DemoUser[] = [
     education: 'B.Tech + MBA',
     profession: 'Product Strategy Lead',
     bio: 'Tech enthusiast who loves classical music, weekend cycling, and thoughtful conversations over good coffee.',
-    photoUrl: '/src/assets/images/profile_rohit_portrait_1792322224570.jpg',
+    photoUrl: '/images/profile_rohit_portrait_1792322224570.jpg',
     membership: {
       planId: 'connect',
       planName: 'CONNECT (₹299)',
@@ -143,7 +143,7 @@ const INITIAL_CUSTOMERS: DemoUser[] = [
     education: 'M.Sc Biotechnology',
     profession: 'Research Scientist',
     bio: 'Biotech researcher who values traditional warmth, mutual understanding, and quiet weekends with family.',
-    photoUrl: '/src/assets/images/profile_diya_portrait_1792322224546.jpg',
+    photoUrl: '/images/profile_diya_portrait_1792322224546.jpg',
     membership: {
       planId: 'premium',
       planName: 'PREMIUM (₹699)',
@@ -166,7 +166,7 @@ const INITIAL_CUSTOMERS: DemoUser[] = [
     education: 'Chartered Accountant (CA)',
     profession: 'Senior VP - Corporate Finance',
     bio: 'Finance professional looking for an educated partner with shared cultural values.',
-    photoUrl: '/src/assets/images/profile_rohit_portrait_1792322224570.jpg',
+    photoUrl: '/images/profile_rohit_portrait_1792322224570.jpg',
     membership: {
       planId: 'free',
       planName: 'Standard Registration',
@@ -187,7 +187,7 @@ const INITIAL_CUSTOMERS: DemoUser[] = [
     education: 'M.S. Software Systems',
     profession: 'Principal Cloud Architect',
     bio: 'Passionate about travel, classical concerts, and building scalable tech.',
-    photoUrl: '/src/assets/images/profile_rohit_portrait_1792322224570.jpg',
+    photoUrl: '/images/profile_rohit_portrait_1792322224570.jpg',
     membership: {
       planId: 'elite',
       planName: 'ELITE (₹1,499)',
@@ -206,11 +206,20 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [currentView, setCurrentViewState] = useState<string>('home');
   const [selectedProfileId, setSelectedProfileId] = useState<string | null>(null);
 
+  // Helper to ensure image URLs point to /images/ even if cached with /src/assets/images/
+  const normalizeImg = (url: string) => (url ? url.replace(/^\/?src\/assets\/images\//, '/images/') : url);
+
   // Core Data
   const [profiles, setProfiles] = useState<Profile[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.PROFILES);
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed: Profile[] = JSON.parse(saved);
+        return parsed.map((p) => ({
+          ...p,
+          photos: p.photos.map(normalizeImg)
+        }));
+      }
     } catch {}
     return INITIAL_PROFILES;
   });
@@ -226,7 +235,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [customers, setCustomers] = useState<DemoUser[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.CUSTOMERS);
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed: DemoUser[] = JSON.parse(saved);
+        return parsed.map((c) => ({
+          ...c,
+          photoUrl: normalizeImg(c.photoUrl)
+        }));
+      }
     } catch {}
     return INITIAL_CUSTOMERS;
   });
@@ -234,7 +249,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [currentUser, setCurrentUser] = useState<DemoUser | null>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.USER);
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed: DemoUser = JSON.parse(saved);
+        return {
+          ...parsed,
+          photoUrl: normalizeImg(parsed.photoUrl)
+        };
+      }
     } catch {}
     return INITIAL_CUSTOMERS[0]; // Default logged in as Arjun Verma
   });
@@ -258,7 +279,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         fromUserId: 'user-groom-01',
         toProfileId: 'sathi-bride-01',
         profileName: 'Ananya Sharma',
-        profilePhoto: '/src/assets/images/profile_ananya_portrait_1792322191115.jpg',
+        profilePhoto: '/images/profile_ananya_portrait_1792322191115.jpg',
         message: 'Namaste Ananya ji, I read your profile with keen interest and felt our educational backgrounds and values align wonderfully. Would love to connect and know more about your journey.',
         createdAt: '2026-03-24T11:00:00Z',
         status: 'Interest Expressed',
@@ -276,7 +297,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         id: 'conv-sathi-bride-01',
         profileId: 'sathi-bride-01',
         profileName: 'Ananya Sharma',
-        profilePhoto: '/src/assets/images/profile_ananya_portrait_1792322191115.jpg',
+        profilePhoto: '/images/profile_ananya_portrait_1792322191115.jpg',
         profileProfession: 'Senior Software Engineer',
         profileCity: 'Bengaluru',
         lastMessageText: 'Namaste! Thank you for reaching out. Yes, I noticed we both share a love for Hindustani music!',
@@ -727,8 +748,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         profession: 'Professional',
         bio: 'Seeking a compassionate life partner on Best Sathi.',
         photoUrl: role === 'groom'
-          ? '/src/assets/images/profile_rohit_portrait_1792322224570.jpg'
-          : '/src/assets/images/profile_ananya_portrait_1792322191115.jpg',
+          ? '/images/profile_rohit_portrait_1792322224570.jpg'
+          : '/images/profile_ananya_portrait_1792322191115.jpg',
         membership: {
           planId: 'free',
           planName: 'Free Registration',
