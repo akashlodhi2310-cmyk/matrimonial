@@ -1,0 +1,6 @@
+{
+  "name": "Best Sathi — Premium Indian Matrimonial Discovery",
+  "description": "Discover meaningful matrimonial connections on Best Sathi (bestsathi.com). Curated sample profiles, refined discovery, and flexible membership.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
